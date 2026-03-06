@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity App </title>
+    <link rel="icon" href="2a3c4610-9c34-476e-9664-d76b97b1f07f.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <h1>Welcome, Shalom Peace</h1>
+
+  <div class="stats">
+    <div class="stat-card purple">
+      <h2>15</h2>
+      <p>Subjects</p>
+    </div>
+
+    <div class="stat-card beige">
+      <h2>18</h2>
+      <p>Cards Created</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>Subjects</h2>
+ <button class="add-btn" id="addSubjectBtn">+ add subject</button>
+  </div>
+
+  <div class="subjects-container">
+   <div class="subjects-grid" id="subjectsGrid">
+
+     <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Mathematics</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>English</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Chemistry</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+     <a href="physics.html" class="subject-link">
+  <div class="subject-card">
+  <button class="delete-btn">×</button>
+    <h3>Physics</h3>
+    <p>Total cards: 5</p>
+  </div>
+</a>
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>CRS</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Civic Education</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Data Processing</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+     <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Computer</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+     <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Biology</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+     <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>French</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Edo</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Agriculture</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+      <div class="subject-card">
+  <button class="delete-btn">×</button>
+        <h3>Lit-in-english</h3>
+        <p>Total cards: 5</p>
+      </div>
+
+        <div class="subject-card">
+  <button class="delete-btn">×</button>
+            <h3>Social Stidies</h3>
+            <p>Total cards: 5</p>
+        </div>
+
+        <div class="subject-card">
+  <button class="delete-btn">×</button>
+            <h3>PHE</h3>
+            <p>Total cards: 5</p>
+        </div>
+
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const addBtn = document.getElementById("addSubjectBtn");
+  const subjectsGrid = document.getElementById("subjectsGrid");
+
+  // ADD SUBJECT
+  addBtn.addEventListener("click", function () {
+
+    const subjectName = prompt("Enter subject name:");
+
+    if (!subjectName || subjectName.trim() === "") {
+      alert("Please enter a valid subject name");
+      return;
+    }
+
+    const card = document.createElement("div");
+    card.classList.add("subject-card");
+
+    card.innerHTML = `
+      <button class="delete-btn">×</button>
+      <h3>${subjectName}</h3>
+      <p>Total cards: 0</p>
+    `;
+
+    subjectsGrid.appendChild(card);
+  });
+
+  // DELETE SUBJECT (works for all cards)
+  subjectsGrid.addEventListener("click", function (e) {
+    if (e.target.classList.contains("delete-btn")) {
+      const card = e.target.closest(".subject-card");
+      card.remove();
+    }
+  });
+
+});
+</script>
+</body>
+</html>
