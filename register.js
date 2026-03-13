@@ -1,4 +1,4 @@
-const URL_HOST = "http://localhost:8000";
+const URL_HOST = "https://flash-card-backend-ibve.onrender.com";
 
 const toggle = document.getElementById("toggleAuth");
 const loginForm = document.getElementById("loginForm");

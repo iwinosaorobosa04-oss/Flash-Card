@@ -1,4 +1,4 @@
-const URL_HOST = "http://localhost:8000";
+const URL_HOST = "https://flash-card-backend-ibve.onrender.com";
 
 const fullNameSpan = document.getElementById("fullName");
 const subjectsCount = document.getElementById("subjectsCount");
