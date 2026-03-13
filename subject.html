@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject</title>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        display: flex;
+        place-content: center;
+        padding: 24px;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      main {
+        border: 1px solid #3a3a3a;
+        border-radius: 1rem;
+        padding: 20px;
+        min-height: 100%;
+        width: 100%;
+      }
+
+      .top-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .top-container h1 {
+        margin: 0;
+      }
+
+      .top-container button {
+        padding: 16px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        background-color: #341ef8;
+        font-weight: bold;
+        box-shadow: 0 8px 24px 0px #d9d9d9;
+      }
+
+      .top-container button:hover {
+        background-color: #2a16c7;
+        transform: translate(-2px, -2px);
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: fit-content;
+        gap: 2rem;
+        position: relative;
+      }
+
+      .card {
+        perspective: 1000px;
+      }
+
+      .card:not(.create-card):hover .inner-card {
+        transform: rotateY(180deg);
+      }
+
+      .create-card textarea {
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+        border: none;
+        resize: none;
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        font-style: inherit;
+      }
+
+      .create-card textarea:focus {
+        outline: none;
+      }
+
+      .create-card button {
+        margin-top: 1rem;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+        color: #3a3a3a;
+        background-color: white;
+        font-weight: bold;
+      }
+
+      .inner-card {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        border-radius: 18px;
+      }
+
+      .inner-card > div {
+        position: absolute;
+        width: 100%;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+        border-radius: 18px;
+        backface-visibility: hidden;
+      }
+
+      .inner-card > div:last-child {
+        transform: rotateY(180deg);
+      }
+
+      .inner-card > div > * {
+        margin: 0;
+      }
+
+      .inner-card > div > *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .inner-card h4 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .inner-card p:not(.answer) {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .answer {
+        font-size: 24px;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .pale-gold-card,
+      .pale-gold-card > div {
+        background-color: #ffdfa7;
+        color: #c09b59;
+        caret-color: #c09b59;
+      }
+
+      .purple-card,
+      .purple-card > div {
+        background-color: #af9eff;
+        color: #7868c0;
+        caret-color: #7868c0;
+      }
+
+      .dark-card,
+      .dark-card > div {
+        background-color: #393939;
+        color: #fff;
+        caret-color: #fff;
+      }
+
+      .blue-card,
+      .blue-card > div {
+        background-color: #341ef8;
+        color: #fff;
+        caret-color: #fff;
+      }
+    </style>
+    <script defer src="subject.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="top-container">
+        <h1>Physics</h1>
+        <button>+ Add Card</button>
+      </div>
+
+      <section class="cards-container"></section>
+    </main>
+  </body>
+</html>

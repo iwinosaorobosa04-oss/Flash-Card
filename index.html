@@ -1,165 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Productivity App </title>
-    <link rel="icon" href="2a3c4610-9c34-476e-9664-d76b97b1f07f.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-  <h1>Welcome, Shalom Peace</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Student Productivity</title>
+    <link rel="stylesheet" href="style.css" />
 
-  <div class="stats">
-    <div class="stat-card purple">
-      <h2>15</h2>
-      <p>Subjects</p>
+    <style>
+      .auth-wrapper {
+        max-width: 400px;
+        margin: 100px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .auth-wrapper h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .auth-wrapper p {
+        color: #777;
+        margin-bottom: 25px;
+      }
+
+      .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .auth-form input {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      .auth-form input:focus {
+        outline: none;
+        border-color: #5a4bff;
+      }
+
+      .switch {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .switch a {
+        color: #5a4bff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="auth-wrapper">
+      <h1>Student FlashCard WebApp</h1>
+      <p id="authTitle">Create your account</p>
+
+      <!-- LOGIN FORM -->
+      <form class="auth-form hidden" id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+
+        <button class="add-btn">Let's go!</button>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form class="auth-form" id="signupForm">
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="Full Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+
+        <button class="add-btn">Let's go!</button>
+      </form>
+
+      <div class="switch">
+        <span id="switchText">Don't have an account?</span>
+        <a href="#" id="toggleAuth">Login</a>
+      </div>
     </div>
 
-    <div class="stat-card beige">
-      <h2>18</h2>
-      <p>Cards Created</p>
-    </div>
-  </div>
-
-  <div class="section-header">
-    <h2>Subjects</h2>
- <button class="add-btn" id="addSubjectBtn">+ add subject</button>
-  </div>
-
-  <div class="subjects-container">
-   <div class="subjects-grid" id="subjectsGrid">
-
-     <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Mathematics</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>English</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Chemistry</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-     <a href="physics.html" class="subject-link">
-  <div class="subject-card">
-  <button class="delete-btn">×</button>
-    <h3>Physics</h3>
-    <p>Total cards: 5</p>
-  </div>
-</a>
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>CRS</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Civic Education</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Data Processing</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-     <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Computer</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-     <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Biology</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-     <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>French</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Edo</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Agriculture</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-      <div class="subject-card">
-  <button class="delete-btn">×</button>
-        <h3>Lit-in-english</h3>
-        <p>Total cards: 5</p>
-      </div>
-
-        <div class="subject-card">
-  <button class="delete-btn">×</button>
-            <h3>Social Stidies</h3>
-            <p>Total cards: 5</p>
-        </div>
-
-        <div class="subject-card">
-  <button class="delete-btn">×</button>
-            <h3>PHE</h3>
-            <p>Total cards: 5</p>
-        </div>
-
-
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const addBtn = document.getElementById("addSubjectBtn");
-  const subjectsGrid = document.getElementById("subjectsGrid");
-
-  // ADD SUBJECT
-  addBtn.addEventListener("click", function () {
-
-    const subjectName = prompt("Enter subject name:");
-
-    if (!subjectName || subjectName.trim() === "") {
-      alert("Please enter a valid subject name");
-      return;
-    }
-
-    const card = document.createElement("div");
-    card.classList.add("subject-card");
-
-    card.innerHTML = `
-      <button class="delete-btn">×</button>
-      <h3>${subjectName}</h3>
-      <p>Total cards: 0</p>
-    `;
-
-    subjectsGrid.appendChild(card);
-  });
-
-  // DELETE SUBJECT (works for all cards)
-  subjectsGrid.addEventListener("click", function (e) {
-    if (e.target.classList.contains("delete-btn")) {
-      const card = e.target.closest(".subject-card");
-      card.remove();
-    }
-  });
-
-});
-</script>
-</body>
+    <script src="register.js"></script>
+  </body>
 </html>
